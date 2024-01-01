@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/crud.css">
+    <title>CRUD SYSTEM</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="crud">
+        <header class="header">
+            <h2>CRUD</h2>
+            <p>PRODUCTS MANGEMENT SYSTEM</p>
+        </header> <!--/header -->
+        <div class="inputs">
+            <input type="text" id="title" placeholder="Title" >
+            <div class="price">
+                <input onkeyup="TotalPrices()" type="number" id="price" placeholder="Price">
+                <input onkeyup="TotalPrices()" type="number" id="taxes" placeholder="Taxes">
+                <input onkeyup="TotalPrices()" type="number" id="ads" placeholder="ADS">
+                <input onkeyup="TotalPrices()" type="number" id="discount" placeholder="Discount">
+                <small id="total"></small>
+            </div><!--/price -->
+            <input type="number" id="count" placeholder="Count">                
+            <form>
+                <input list="option"  type="text" id="category" placeholder="Category">
+                <datalist id="option"> 
+                    <option value="Phone"></option>
+                    <option value="Tablet"></option>
+                    <option value="PC"></option>
+                    <option value="LapTop"></option>
+                    <option value="TV"></option>
+                </datalist>
+            </form><!--/form -->
+            <button id="submit">Create</button>
+            <div class="outputs">
+                <div class="searchBox">
+                    <input onkeyup="searchInfo(this.value)" type="text" id="search" placeholder="Search">
+                    <div class="btnSearch">
+                        <button onclick="getSearchTitle(this.id)" id="searchTitle">Search By Title</button>
+                        <button onclick="getSearchTitle(this.id)" id="searchCategory">Search By Category</button>
+                    </div> 
+                 </div> <!--/searchBox -->
+                 <div id="deleteAll"></div>
+                 <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>Ads</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                        <th>Category</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tbody id="tbody">
+                    </tbody><!--/tbody -->
+                 </table><!--/table -->
+            </div><!-- /outputs -->
+        </div><!--/inputs -->
+    </div><!--/curd -->    
+    </div><!--/overlay --> 
+    <script src="js/crud.js"></script>
+</body>
+</html>
